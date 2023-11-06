@@ -16,7 +16,7 @@ export function getRomanNumeral(inputValue: number): string {
   ];
 
   let romanNumeral: string = "";
-  //any value greater than 9 can be appended ths same way as 5
+  /*
   let tempValue = inputValue;
   if (tempValue >= 9) {
     romanNumeral += "IX";
@@ -26,15 +26,13 @@ export function getRomanNumeral(inputValue: number): string {
   if (tempValue >= 5) {
     romanNumeral += "V";
     tempValue -= 5;
+  }*/
+  //making use of initialised values and applying the pattern logic within while loop
+  for (const [decimalValue, romanValue] of romanNumerals) {
+    while (inputValue >= decimalValue) {
+      romanNumeral += romanValue;
+      inputValue -= decimalValue;
+    }
   }
-  if (tempValue >= 4) {
-    romanNumeral += "IV";
-    tempValue -= 4;
-  }
-  //Checking for the values 1,2, and 3
-  for (let i = 0; i < tempValue; i++) {
-    romanNumeral += "I";
-  }
-
   return romanNumeral;
 }
