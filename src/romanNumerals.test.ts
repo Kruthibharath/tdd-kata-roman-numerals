@@ -39,3 +39,13 @@ describe("test for small numeric value", () => {
     expect(inputValue).toBe(result);
   });
 });
+
+describe("test for small numeric value", () => {
+  //Arrange
+  const inputValue = getRomanNumeral(8);
+  const result = "VIII";
+  //Act/Assert
+  test("Should return VIII for 8", () => {
+    expect(inputValue).toBe(result);
+  });
+});

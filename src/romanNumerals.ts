@@ -16,16 +16,19 @@ export function getRomanNumeral(inputValue: number): string {
   ];
 
   let romanNumeral: string = "";
-  //checking for 4 and 5
-  if (inputValue == 5) {
+  //any value greater than 5 can be appended with 1 to 3 logic in for loop
+  let tempValue = inputValue;
+  if (inputValue >= 5) {
     romanNumeral += "V";
-  } else if (inputValue == 4) {
+    tempValue -= 5;
+  }
+  if (tempValue == 4) {
     romanNumeral += "IV";
-  } else {
-    //Checking for the values 1,2, and 3
-    for (let i = 0; i < inputValue; i++) {
-      romanNumeral += "I";
-    }
+    tempValue -= 4;
+  }
+  //Checking for the values 1,2, and 3
+  for (let i = 0; i < tempValue; i++) {
+    romanNumeral += "I";
   }
 
   return romanNumeral;
