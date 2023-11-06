@@ -16,13 +16,18 @@ export function getRomanNumeral(inputValue: number): string {
   ];
 
   let romanNumeral: string = "";
-  //any value greater than 5 can be appended with 1 to 3 logic in for loop
+  //any value greater than 9 can be appended ths same way as 5
   let tempValue = inputValue;
-  if (inputValue >= 5) {
+  if (tempValue >= 9) {
+    romanNumeral += "IX";
+    tempValue -= 9;
+  }
+  //any value greater than 5 can be appended with 1 to 3 logic in for loop
+  if (tempValue >= 5) {
     romanNumeral += "V";
     tempValue -= 5;
   }
-  if (tempValue == 4) {
+  if (tempValue >= 4) {
     romanNumeral += "IV";
     tempValue -= 4;
   }
