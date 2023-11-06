@@ -22,10 +22,20 @@ describe("test for simple numeric value", () => {
 
 describe("test for small numeric value", () => {
   //Arrange
-  const inputValue = getRomanNumeral(3);
-  const result = "III";
+  const inputValue = getRomanNumeral(4);
+  const result = "IV";
   //Act/Assert
-  test("Should return III for 3", () => {
+  test("Should return IV for 4", () => {
+    expect(inputValue).toBe(result);
+  });
+});
+
+describe("test for small numeric value", () => {
+  //Arrange
+  const inputValue = getRomanNumeral(5);
+  const result = "V";
+  //Act/Assert
+  test("Should return V for 5", () => {
     expect(inputValue).toBe(result);
   });
 });

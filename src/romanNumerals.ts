@@ -16,9 +16,16 @@ export function getRomanNumeral(inputValue: number): string {
   ];
 
   let romanNumeral: string = "";
-  //Checking for the values 1,2, and 3
-  for (let i = 0; i < inputValue; i++) {
-    romanNumeral += "I";
+  //checking for 4 and 5
+  if (inputValue == 5) {
+    romanNumeral += "V";
+  } else if (inputValue == 4) {
+    romanNumeral += "IV";
+  } else {
+    //Checking for the values 1,2, and 3
+    for (let i = 0; i < inputValue; i++) {
+      romanNumeral += "I";
+    }
   }
 
   return romanNumeral;
